@@ -1,7 +1,9 @@
 /// <reference types="cypress" />
 
+import articles from '../support/pages/articles/index'
+
 // importando a blibloteca do Faker
-const FAKER = require('faker')
+//const FAKER = require('faker') //HACK - O Faker está sendo utilizado no arquivo index.js que contem a função que foi criada.
 
 
 context('Publicação', () => {
@@ -13,22 +15,16 @@ context('Publicação', () => {
   beforeEach(() => {    
 
     // Preparação
-
     cy.backgroundLogin() // HACK - Custom Command
-    cy.get('a[href*=editor]').click()
+
+    articles.acessarFormularioDeNewArticle()
+    
   })
     it('Criar uma nova publicação', () => {
 
       // Execução/Ação
-
-      cy.get('input[ng-model*=title]').type(FAKER.name.title())
-      cy.get('input[ng-model*=description]').type(FAKER.name.jobDescriptor())
-      cy.get('textarea[ng-model*=body').type(FAKER.lorem.paragraph())
-      cy.get('input[ng-model*=tagField]').type('Cypress{enter}').type('Cy{enter}').type('Recurso de teclas{enter}')
-      // HACK: Para adicionar a tag é necessário fazer o uso do {enter}, caso contrário não será salvo no artigo
-      //cy.get('input[ng-model*=tagField]').type(FAKER.lorem.slug())
-      cy.get('button.btn-primary').click()
-
+      articles.preencherFormulario()
+      articles.submeterFormulario()
 
       // Verificação
 
