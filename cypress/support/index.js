@@ -41,3 +41,10 @@ Cypress.Commands.add('backgroundLogin', () => {
         })
       })
 })
+
+import routes from '../support/routes'
+
+beforeEach(() => {    
+  // Inicialização das rotas antes de todos os testes
+  routes.init()
+})

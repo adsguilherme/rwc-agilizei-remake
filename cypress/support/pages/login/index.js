@@ -1,3 +1,7 @@
+// importando elementos
+const ELEMENTS = require('./elements').ELEMENTS
+
+
 let login
 
 before(() => {
@@ -15,13 +19,13 @@ class LoginPage {
 
   preencherFormulario(){
     // Preencher formulário
-    cy.get('input[ng-model*=email]').type(login.user.email)
-    cy.get('input[ng-model*=password]').type(login.user.password)
+    cy.get(ELEMENTS.inputEmail).type(login.user.email)
+    cy.get(ELEMENTS.inputPassword).type(login.user.password)
   }
 
   submeterFormulario(){
     // Submeter/enviar formulário de login
-    cy.get('button.btn-primary').click()
+    cy.get(ELEMENTS.buttonSubmit).click()
   }
 
 }

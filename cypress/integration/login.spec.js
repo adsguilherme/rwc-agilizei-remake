@@ -4,7 +4,7 @@
 
 import loginPage from '../support/pages/login/index'
 
-context('Login', () => {
+context('Login', { browser: 'chrome' }, () => {
     
     /*
 

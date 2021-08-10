@@ -2,6 +2,8 @@
 
 import articles from '../support/pages/articles/index'
 
+//import routes from '../support/routes'
+
 // importando a blibloteca do Faker
 //const FAKER = require('faker') //HACK - O Faker está sendo utilizado no arquivo index.js que contem a função que foi criada.
 
@@ -13,6 +15,10 @@ context('Publicação', () => {
   // after (depois de todos os testes) / afterEach (depois de cada teste)
   
   beforeEach(() => {    
+
+    // Inicialização das rotas
+    //HACK - Foi refatorado para que a chamada seja realizada por meio de um hook.
+    //routes.init()
 
     // Preparação
     cy.backgroundLogin() // HACK - Custom Command
@@ -27,7 +33,7 @@ context('Publicação', () => {
       articles.submeterFormulario()
 
       // Verificação
-
+      articles.verificarPublicacaoCriadaComSucesso()
 
     })
 })
