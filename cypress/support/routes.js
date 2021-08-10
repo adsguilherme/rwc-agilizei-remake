@@ -30,7 +30,8 @@ POSTArticles
 GETArticlesTitle
 GETArticlesTitleComments
 
-HACK - Criando alias para poder utilizar no cy.wait do método verificarPublicacaoCriadaComSucesso()
-HACK - Com o uso do alias o código fica melhor para dar manutenção e reaprivetamento de código.
+HACK
+Criando alias para poder utilizar no cy.wait do método verificarPublicacaoCriadaComSucesso()
+Com o uso do alias o código fica melhor para dar manutenção e reaproveitamento de código.
 
 */

@@ -2,7 +2,7 @@
 // https://on.cypress.io/intelligent-code-completion
 /// <reference types="cypress" />
 
-describe('Example Cypress TodoMVC test', () => {
+describe.skip('Example Cypress TodoMVC test', () => {
   beforeEach(() => {
     // usually we recommend setting baseUrl in cypress.json
     // but for simplicity of this example we just use it here

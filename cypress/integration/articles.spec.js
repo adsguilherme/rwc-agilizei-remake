@@ -18,7 +18,7 @@ context('Publicação', () => {
 
     // Inicialização das rotas
     //HACK - Foi refatorado para que a chamada seja realizada por meio de um hook.
-    routes.init()
+    //routes.init()
 
     // Preparação
     cy.backgroundLogin() // HACK - Custom Command
