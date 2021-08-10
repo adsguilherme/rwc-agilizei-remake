@@ -23,7 +23,7 @@ You can configure project options in the [../cypress.json](../cypress.json) file
 - [https://docs.cypress.io/](https://docs.cypress.io/)
 - [Writing your first Cypress test](https://on.cypress.io/intro)
 
-# ---------------------------------------------------------------------------------------------- #
+# ------------------------------------------------------------ #
 
 # PT-BR
 
