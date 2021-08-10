@@ -1,6 +1,8 @@
 {
     "$schema": "https://raw.githubusercontent.com/cypress-io/cypress/develop/cli/schema/cypress.schema.json",
     "watchForFileChanges": false,
+    "experimentalSourceRewriting": true,
+    "chromeWebSecurity": false,
     "user": {
         "email": "gscodeauto86@gscodeauto86.com",
         "password": "abc12345"

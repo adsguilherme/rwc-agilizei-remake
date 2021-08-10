@@ -4,7 +4,12 @@
 
 import loginPage from '../support/pages/login/index'
 
-context('Login', { browser: 'chrome' }, () => {
+// HACK
+// Caso queira executar o teste em um determinado browser utilizar: { browser: 'chrome' }
+// Caso não queira executar o teste em um determinado browser utilizar: { browser: '!chrome' }
+// context('Login', { browser: 'chrome' }, () => {
+
+context('Login', () => {
     
     /*
 
