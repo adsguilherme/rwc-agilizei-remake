@@ -1,0 +1,34 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+# Todo código alterado na branch main, será disparado essa trigger de execução desse pipeline
+trigger:
+- main
+
+# Pool é a máquina que irá executar 
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '12.x'
+  displayName: 'Install Node.js'
+
+# Script é o comando que vai ser executado
+# displayName é apenas um nome para identificar o script que está sendo executado
+- script: npm ci
+  displayName: 'npm install'
+  
+# Testes sendo executados no Electron e Chrome
+# continueOnError: true, é para continuar a execução da pipeline mesmo que apresente algum erro
+
+- script: npm run cy:run:electron
+  displayName: 'Run teste on Electron'
+  continueOnError: true
+
+- script: npm run cy:run:chrome
+  displayName: 'Run teste on Chrome'
+  continueOnError: true
