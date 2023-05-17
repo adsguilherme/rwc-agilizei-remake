@@ -27,12 +27,11 @@ steps:
 
 - script: npm run cy:run:electron
   displayName: 'Run teste on Electron'
-  #continueOnError: true
-  condition: always()
+  continueOnError: true
 
 - script: npm run cy:run:chrome
   displayName: 'Run teste on Chrome'
-  #continueOnError: true
+  continueOnError: true
 
 # mergeTestResults: true, irá fazer um merge (junção) dos arquivos gerados dentro da pasta reports.
 # no caso irá fazer o merge de todos os arquivos junit-[hash].xml
@@ -42,4 +41,4 @@ steps:
    testResultsFiles: '**/junit-*.xml'
    mergeTestResults: true
    testRunTitle: 'RWC Remake - Pipeline Azure DevOps'
-  #continueOnError: true
+  continueOnError: true
